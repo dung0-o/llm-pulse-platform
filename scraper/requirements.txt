@@ -1,0 +1,6 @@
+dbt-core
+dbt-bigquery
+feedparser
+google-cloud-storage
+pydantic-settings
+structlog

@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: gold_post_features
+    columns:
+      - name: mention_id
+        data_tests:
+          - not_null
+          - unique
+      - name: post_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('silver_cleaned_posts')
+              field: post_id
+      - name: brand
+        data_tests:
+          - not_null
+      - name: mention
+        data_tests:
+          - not_null
+      - name: publish_date
+        data_tests:
+          - not_null
+
+  - name: gold_post_enriched
+    columns:
+      - name: mention_id
+        data_tests:
+          - not_null
+          - unique
+      - name: sentiment_label
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Positive', 'Negative', 'Neutral']
+                config:
+                  where: "sentiment_label is not null"

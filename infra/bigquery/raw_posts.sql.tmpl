@@ -1,0 +1,10 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS
+    `${GCP_PROJECT_ID}.${BQ_DATASET_NAME}.raw_posts`
+WITH PARTITION COLUMNS (
+    ingest_date DATE
+)
+OPTIONS (
+    format = 'NEWLINE_DELIMITED_JSON',
+    uris = ['gs://${GCS_BUCKET_NAME}/*'],
+    hive_partition_uri_prefix = 'gs://${GCS_BUCKET_NAME}/'
+);

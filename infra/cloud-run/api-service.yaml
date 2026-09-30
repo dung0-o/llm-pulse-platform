@@ -1,0 +1,76 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: local-llm-sentiment-api
+  labels:
+    cloud.googleapis.com/location: "${GAR_REPO_LOCATION}"
+  annotations:
+    run.googleapis.com/ingress: all
+
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "1"
+        run.googleapis.com/startup-cpu-boost: "true"
+
+    spec:
+      containerConcurrency: 20
+      timeoutSeconds: 120
+      containers:
+        - name: api
+          image: "${IMAGE_TAG}"
+          ports:
+            - name: http1
+              containerPort: 8080
+
+          resources:
+            limits:
+              cpu: "1"
+              memory: "256Mi"
+
+          env:
+            - name: REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: redis-url
+                  key: latest
+
+            - name: REDIS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: redis-token
+                  key: latest
+
+            - name: HUGGINGFACE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: hf-api-key
+                  key: latest
+
+            - name: GCP_PROJECT_ID
+              value: "${GCP_PROJECT_ID}"
+            - name: BQ_DATASET_NAME
+              value: "${BQ_DATASET_NAME}"
+            - name: SENTIMENT_MODEL_ID
+              value: "${SENTIMENT_MODEL_ID}"
+            - name: INFERENCE_BACKEND
+              value: "${INFERENCE_BACKEND}"
+
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 24
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3

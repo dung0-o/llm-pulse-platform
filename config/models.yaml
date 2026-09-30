@@ -1,0 +1,189 @@
+models:
+  - brand: DeepSeek
+    provider: DeepSeek AI
+    families:
+      - DeepSeek V4
+
+  - brand: Qwen
+    provider: Qwen
+    families:
+      - Qwen 3.8 Flash Next
+      - Qwen 3.8
+      - Qwen 3.6
+      - Qwen 3.5
+      - Qwen Agent World
+      - Qwen Image Bench
+
+  - brand: Nemotron
+    provider: NVIDIA
+    families:
+      - Nemotron 3
+      - Cosmos 3
+
+  - brand: Gemma
+    provider: Google
+    families:
+      - Gemma 4 QAT
+      - Gemma 4
+
+  - brand: Phi
+    provider: Microsoft
+    families:
+      - Mage
+      - MagneticBrain
+      - FrogBoss
+      - Fara 1.5
+      - Phi 4
+
+  - brand: GLM
+    provider: Zai org
+    families:
+      - GLM 5.3
+      - GLM 5.2
+      - GLM 5.1
+      - GLM 5
+
+  - brand: Mistral
+    provider: MistralAI
+    families:
+      - Devstral 2
+      - Ministral 3
+      - Mistral Large 3
+      - Mistral Medium 3.5
+      - Mistral Small 4
+
+  - brand: Hy
+    provider: Tencent
+    families:
+      - Hy 4 preview
+      - Hy 3 preview
+      - Hy 3
+      - Hy MT 2
+
+  - brand: Olmo
+    provider: AllenAI
+    families:
+      - Emo
+      - Tmax
+      - Sera
+      - Bolmo
+      - Olmo Hybrid
+      - Olmo 3.1
+      - Olmo 3
+
+  - brand: Granite
+    provider: IBM Granite
+    families:
+      - Granite 4.2
+      - Granite 4.1
+
+  - brand: LFM
+    provider: LiquidAI
+    families:
+      - LFM 2.5 VL
+      - LFM 2.5
+      - LFM 2
+      - LFM JP
+
+  - brand: MiniCPM
+    provider: OpenBMB
+    families:
+      - MiniCPM 5
+      - BitCPM CANN
+      - MiniCPM V 4.6
+
+  - brand: MiMo
+    provider: XiaomiMiMo
+    families:
+      - MiMo V 2 Flash
+      - MiMo V 2.6
+      - MiMo V 2.5
+
+  - brand: Bonsai
+    provider: Prism ML
+    families:
+      - Ternary Bonsai 2
+      - Ternary Bonsai
+      - Bonsai 27B
+
+  - brand: Ornith
+    provider: Ornith AI
+    families:
+      - Ornith 1.5
+      - Ornith 1
+
+  - brand: Ling
+    provider: InclusionAI
+    families:
+      - Ling 3 Flash Fin
+      - Ling 3
+      - Ling 2.6
+      - LLaDA 2.2
+
+  - brand: Muse Glimmer
+    provider: Meta Model
+    families:
+      - Muse Glimmer
+
+  - brand: Laguna
+    provider: Poolside
+    families:
+      - Laguna M
+      - Laguna S 2.1
+      - Laguna XS 2.1
+      - Laguna XS 2
+
+  - brand: Nanbeige
+    provider: Nanbeige
+    families:
+      - Nanbeige 4.2
+      - Nanbeige 4
+
+  - brand: Falcon
+    provider: TIIuae
+    families:
+      - Falcon H1 Tiny
+      - Falcon H1
+
+  - brand: K2
+    provider: IFM
+    families:
+      - K2 Horizon
+
+  - brand: Spark
+    provider: XHToken
+    families:
+      - Spark X 2.5
+
+  - brand: KAT
+    provider: Kwaipilot
+    families:
+      - KAT Coder
+
+  - brand: Laya
+    provider: ConvaiInnovations
+    families:
+      - Laya
+
+  - brand: Swift
+    provider: UkisAI
+    families:
+      - Swift Flash Next
+      - Swift Bonsai 2
+      - Swift 1.5
+      - Swift 27B
+
+  - brand: Xing
+    provider: XingChen AGI
+    families:
+      - Xing 4
+
+  - brand: Hemmingway
+    provider: Altworld
+    families:
+      - Hemmingway
+
+  - brand: ZDTaichu
+    provider: TaichuAI
+    families:
+      - ZDTaichu 5

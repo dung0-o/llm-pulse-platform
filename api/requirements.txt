@@ -1,0 +1,7 @@
+fastapi
+google-cloud-bigquery
+httpx2
+pydantic
+pydantic-settings
+structlog
+uvicorn[standard]

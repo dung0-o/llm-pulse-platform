@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 222 47% 11%;
+    --surface: 220 20% 98%;
+    --card: 0 0% 100%;
+    --border: 220 13% 91%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --primary: 232 60% 30%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 232 60% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 220 20% 96%;
+    --surface: 222 47% 7%;
+    --card: 222 40% 11%;
+    --border: 222 30% 20%;
+    --muted: 222 30% 16%;
+    --muted-foreground: 220 15% 56%;
+    --primary: 232 60% 60%;
+    --primary-foreground: 222 47% 7%;
+    --accent: 220 60% 55%;
+  }
+
+  body {
+    @apply bg-surface text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-border bg-card shadow-sm;
+  }
+
+  .card-header {
+    @apply flex items-center justify-between border-b border-border px-5 py-3;
+  }
+
+  .card-title {
+    @apply text-sm font-semibold text-foreground;
+  }
+
+  .card-body {
+    @apply p-5;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent/90;
+  }
+
+  .btn-ghost {
+    @apply btn text-muted-foreground hover:bg-muted;
+  }
+
+  .input {
+    @apply w-full rounded-md border border-border bg-card px-3 py-1.5 text-sm
+           placeholder:text-muted-foreground
+           focus:outline-none focus:ring-2 focus:ring-accent/30;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded bg-muted;
+  }
+}

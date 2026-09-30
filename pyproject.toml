@@ -1,0 +1,31 @@
+[project]
+name = "local-pulse-platform"
+version = "1.0.0"
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = [
+    "pyyaml",
+    "ruff",
+    "pytest",
+    "pytest-asyncio",
+    "pre-commit",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Query"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q --strict-markers"
+markers = [
+    "unit: fast, no I/O",
+    "integration: mocked external services",
+]

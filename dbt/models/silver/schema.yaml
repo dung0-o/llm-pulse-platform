@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: silver_cleaned_posts
+    columns:
+      - name: post_id
+        data_tests:
+          - not_null
+          - unique
+      - name: url
+        data_tests:
+          - not_null
+          - unique
+      - name: title
+        data_tests:
+          - not_null
+      - name: published_at
+        data_tests:
+          - not_null

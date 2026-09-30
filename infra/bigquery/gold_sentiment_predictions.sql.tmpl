@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS
+    `${GCP_PROJECT_ID}.${BQ_DATASET_NAME}.gold_sentiment_predictions`
+(
+    mention_id      STRING    NOT NULL,
+    sentiment_score FLOAT64   NOT NULL,
+    sentiment_label STRING    NOT NULL,
+    scored_at       TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
+)
+PARTITION BY DATE(scored_at)
+CLUSTER BY sentiment_label;

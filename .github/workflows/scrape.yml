@@ -1,0 +1,48 @@
+name: Scrape & Transform
+
+on:
+  schedule:
+    - cron: '43 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape-and-transform:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r scraper/requirements.txt
+
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Run scraper
+        env:
+          REDDIT_RSS_URL: ${{ vars.REDDIT_RSS_URL }}
+          GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+          GCS_BUCKET_NAME: ${{ vars.GCS_BUCKET_NAME }}
+        run: python scraper/main.py
+
+      - name: Run dbt models
+        env:
+          GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+          BQ_DATASET_NAME: ${{ vars.BQ_DATASET_NAME }}
+          BQ_DATASET_LOCATION: ${{ vars.BQ_DATASET_LOCATION }}
+        run: |
+          cd dbt
+          dbt build --profiles-dir . --profile local_llm_sentiment

@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: "{{ env_var('GCP_PROJECT_ID') }}"
+    schema: "{{ env_var('BQ_DATASET_NAME') }}"
+    tables:
+      - name: raw_posts
+        columns:
+          - name: id
+            data_tests:
+              - not_null
+          - name: title
+            data_tests:
+              - not_null
+          - name: published
+            data_tests:
+              - not_null
+
+  - name: model
+    database: "{{ env_var('GCP_PROJECT_ID') }}"
+    schema: "{{ env_var('BQ_DATASET_NAME') }}"
+    tables:
+      - name: gold_sentiment_predictions
+        columns:
+          - name: mention_id
+            data_tests:
+              - not_null
+              - unique
+          - name: sentiment_score
+            data_tests:
+              - not_null
+          - name: sentiment_label
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: ['Positive', 'Negative', 'Neutral']
+          - name: model_confidence
+          - name: scored_at
+            data_tests:
+              - not_null

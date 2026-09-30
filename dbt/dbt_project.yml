@@ -1,0 +1,26 @@
+name: 'local_llm_sentiment'
+version: '1.0.0'
+config-version: 2
+
+profile: 'local_llm_sentiment'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+models:
+  local_llm_sentiment:
+    staging:
+      +materialized: view
+    silver:
+      +materialized: table
+      +incremental_strategy: merge
+      +unique_key: post_id
+    gold:
+      +materialized: table
+      +incremental_strategy: insert_overwrite
+      +partition_by:
+          field: publish_date
+          data_type: date
+      gold_post_enriched:
+        +materialized: view
+        +partition_by: null

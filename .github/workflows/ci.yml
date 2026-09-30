@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: pip install -r api/requirements.txt
+      - run: ruff check .
+      - run: pytest -m "unit or integration" --cov=api --cov=scripts -q
+        env:
+          GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+          BQ_DATASET_NAME: ${{ vars.BQ_DATASET_NAME }}
+          GAR_REPO_LOCATION: ${{ vars.GAR_REPO_LOCATION }}
+          SENTIMENT_MODEL_ID: ${{ vars.SENTIMENT_MODEL_ID }}
+          INFERENCE_BACKEND: ${{ vars.INFERENCE_BACKEND }}
+          HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+          REDIS_URL: ${{ secrets.REDIS_URL }}
+          REDIS_TOKEN: ${{ secrets.REDIS_TOKEN }}
+
+  dashboard:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: dashboard
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: dashboard/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run test
+      - run: npm run build
+
+  scraper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r scraper/requirements.txt
+      - run: cd dbt && dbt parse --profiles-dir . --profile local_llm_sentiment
+        env:
+          GCP_PROJECT_ID: placeholder
+          BQ_DATASET_NAME: placeholder
+          BQ_DATASET_LOCATION: us-central1

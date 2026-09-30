@@ -1,0 +1,103 @@
+brand,model,is_specific_family,pattern
+DeepSeek,DeepSeek V4,True,(?i)\bDeepSeek[\sv-]*V4(?:v\d)*\b
+DeepSeek,DeepSeek,False,(?i)\bDeepSeek(?:v\d)*\b
+Qwen,Qwen 3.8 Flash Next,True,(?i)\bQwen[\sv-]*3[\s.-]*8[\sv-]*Flash[\sv-]*Next(?:v\d)*\b
+Qwen,Qwen 3.8,True,(?i)\bQwen[\sv-]*3[\s.-]*8(?:v\d)*\b
+Qwen,Qwen 3.6,True,(?i)\bQwen[\sv-]*3[\s.-]*6(?:v\d)*\b
+Qwen,Qwen 3.5,True,(?i)\bQwen[\sv-]*3[\s.-]*5(?:v\d)*\b
+Qwen,Qwen Agent World,True,(?i)\bQwen[\sv-]*Agent[\sv-]*World(?:v\d)*\b
+Qwen,Qwen Image Bench,True,(?i)\bQwen[\sv-]*Image[\sv-]*Bench(?:v\d)*\b
+Qwen,Qwen,False,(?i)\bQwen(?:v\d)*\b
+Nemotron,Nemotron 3,True,(?i)\bNemotron[\sv-]*3(?:v\d)*\b
+Nemotron,Cosmos 3,True,(?i)\bCosmos[\sv-]*3(?:v\d)*\b
+Nemotron,Nemotron,False,(?i)\bNemotron(?:v\d)*\b
+Gemma,Gemma 4 QAT,True,(?i)\bGemma[\sv-]*4[\sv-]*QAT(?:v\d)*\b
+Gemma,Gemma 4,True,(?i)\bGemma[\sv-]*4(?:v\d)*\b
+Gemma,Gemma,False,(?i)\bGemma(?:v\d)*\b
+Phi,Mage,True,(?i)\bMage(?:v\d)*\b
+Phi,MagneticBrain,True,(?i)\bMagneticBrain(?:v\d)*\b
+Phi,FrogBoss,True,(?i)\bFrogBoss(?:v\d)*\b
+Phi,Fara 1.5,True,(?i)\bFara[\sv-]*1[\s.-]*5(?:v\d)*\b
+Phi,Phi 4,True,(?i)\bPhi[\sv-]*4(?:v\d)*\b
+Phi,Phi,False,(?i)\bPhi(?:v\d)*\b
+GLM,GLM 5.3,True,(?i)\bGLM[\sv-]*5[\s.-]*3(?:v\d)*\b
+GLM,GLM 5.2,True,(?i)\bGLM[\sv-]*5[\s.-]*2(?:v\d)*\b
+GLM,GLM 5.1,True,(?i)\bGLM[\sv-]*5[\s.-]*1(?:v\d)*\b
+GLM,GLM 5,True,(?i)\bGLM[\sv-]*5(?:v\d)*\b
+GLM,GLM,False,(?i)\bGLM(?:v\d)*\b
+Mistral,Devstral 2,True,(?i)\bDevstral[\sv-]*2(?:v\d)*\b
+Mistral,Ministral 3,True,(?i)\bMinistral[\sv-]*3(?:v\d)*\b
+Mistral,Mistral Large 3,True,(?i)\bMistral[\sv-]*Large[\sv-]*3(?:v\d)*\b
+Mistral,Mistral Medium 3.5,True,(?i)\bMistral[\sv-]*Medium[\sv-]*3[\s.-]*5(?:v\d)*\b
+Mistral,Mistral Small 4,True,(?i)\bMistral[\sv-]*Small[\sv-]*4(?:v\d)*\b
+Mistral,Mistral,False,(?i)\bMistral(?:v\d)*\b
+Hy,Hy 4 preview,True,(?i)\bHy[\sv-]*4[\sv-]*preview(?:v\d)*\b
+Hy,Hy 3 preview,True,(?i)\bHy[\sv-]*3[\sv-]*preview(?:v\d)*\b
+Hy,Hy 3,True,(?i)\bHy[\sv-]*3(?:v\d)*\b
+Hy,Hy MT 2,True,(?i)\bHy[\sv-]*MT[\sv-]*2(?:v\d)*\b
+Hy,Hy,False,(?i)\bHy(?:v\d)*\b
+Olmo,Emo,True,(?i)\bEmo(?:v\d)*\b
+Olmo,Tmax,True,(?i)\bTmax(?:v\d)*\b
+Olmo,Sera,True,(?i)\bSera(?:v\d)*\b
+Olmo,Bolmo,True,(?i)\bBolmo(?:v\d)*\b
+Olmo,Olmo Hybrid,True,(?i)\bOlmo[\sv-]*Hybrid(?:v\d)*\b
+Olmo,Olmo 3.1,True,(?i)\bOlmo[\sv-]*3[\s.-]*1(?:v\d)*\b
+Olmo,Olmo 3,True,(?i)\bOlmo[\sv-]*3(?:v\d)*\b
+Olmo,Olmo,False,(?i)\bOlmo(?:v\d)*\b
+Granite,Granite 4.2,True,(?i)\bGranite[\sv-]*4[\s.-]*2(?:v\d)*\b
+Granite,Granite 4.1,True,(?i)\bGranite[\sv-]*4[\s.-]*1(?:v\d)*\b
+Granite,Granite,False,(?i)\bGranite(?:v\d)*\b
+LFM,LFM 2.5 VL,True,(?i)\bLFM[\sv-]*2[\s.-]*5[\sv-]*VL(?:v\d)*\b
+LFM,LFM 2.5,True,(?i)\bLFM[\sv-]*2[\s.-]*5(?:v\d)*\b
+LFM,LFM 2,True,(?i)\bLFM[\sv-]*2(?:v\d)*\b
+LFM,LFM JP,True,(?i)\bLFM[\sv-]*JP(?:v\d)*\b
+LFM,LFM,False,(?i)\bLFM(?:v\d)*\b
+MiniCPM,MiniCPM 5,True,(?i)\bMiniCPM[\sv-]*5(?:v\d)*\b
+MiniCPM,BitCPM CANN,True,(?i)\bBitCPM[\sv-]*CANN(?:v\d)*\b
+MiniCPM,MiniCPM V 4.6,True,(?i)\bMiniCPM\s?V?\s?4[\s.-]*6(?:v\d)*\b
+MiniCPM,MiniCPM,False,(?i)\bMiniCPM(?:v\d)*\b
+MiMo,MiMo V 2 Flash,True,(?i)\bMiMo\s?V?\s?2[\sv-]*Flash(?:v\d)*\b
+MiMo,MiMo V 2.6,True,(?i)\bMiMo\s?V?\s?2[\s.-]*6(?:v\d)*\b
+MiMo,MiMo V 2.5,True,(?i)\bMiMo\s?V?\s?2[\s.-]*5(?:v\d)*\b
+MiMo,MiMo,False,(?i)\bMiMo(?:v\d)*\b
+Bonsai,Ternary Bonsai 2,True,(?i)\bTernary[\sv-]*Bonsai[\sv-]*2(?:v\d)*\b
+Bonsai,Ternary Bonsai,True,(?i)\bTernary[\sv-]*Bonsai(?:v\d)*\b
+Bonsai,Bonsai 27B,True,(?i)\bBonsai[\sv-]*27B(?:v\d)*\b
+Bonsai,Bonsai,False,(?i)\bBonsai(?:v\d)*\b
+Ornith,Ornith 1.5,True,(?i)\bOrnith[\sv-]*1[\s.-]*5(?:v\d)*\b
+Ornith,Ornith 1,True,(?i)\bOrnith[\sv-]*1(?:v\d)*\b
+Ornith,Ornith,False,(?i)\bOrnith(?:v\d)*\b
+Ling,Ling 3 Flash Fin,True,(?i)\bLing[\sv-]*3[\sv-]*Flash[\sv-]*Fin(?:v\d)*\b
+Ling,Ling 3,True,(?i)\bLing[\sv-]*3(?:v\d)*\b
+Ling,Ling 2.6,True,(?i)\bLing[\sv-]*2[\s.-]*6(?:v\d)*\b
+Ling,LLaDA 2.2,True,(?i)\bLLaDA[\sv-]*2[\s.-]*2(?:v\d)*\b
+Ling,Ling,False,(?i)\bLing(?:v\d)*\b
+Muse Glimmer,Muse Glimmer,True,(?i)\bMuse[\sv-]*Glimmer(?:v\d)*\b
+Laguna,Laguna M,True,(?i)\bLaguna[\sv-]*M(?:v\d)*\b
+Laguna,Laguna S 2.1,True,(?i)\bLaguna[\sv-]*S[\sv-]*2[\s.-]*1(?:v\d)*\b
+Laguna,Laguna XS 2.1,True,(?i)\bLaguna[\sv-]*XS[\sv-]*2[\s.-]*1(?:v\d)*\b
+Laguna,Laguna XS 2,True,(?i)\bLaguna[\sv-]*XS[\sv-]*2(?:v\d)*\b
+Laguna,Laguna,False,(?i)\bLaguna(?:v\d)*\b
+Nanbeige,Nanbeige 4.2,True,(?i)\bNanbeige[\sv-]*4[\s.-]*2(?:v\d)*\b
+Nanbeige,Nanbeige 4,True,(?i)\bNanbeige[\sv-]*4(?:v\d)*\b
+Nanbeige,Nanbeige,False,(?i)\bNanbeige(?:v\d)*\b
+Falcon,Falcon H1 Tiny,True,(?i)\bFalcon[\sv-]*H1[\sv-]*Tiny(?:v\d)*\b
+Falcon,Falcon H1,True,(?i)\bFalcon[\sv-]*H1(?:v\d)*\b
+Falcon,Falcon,False,(?i)\bFalcon(?:v\d)*\b
+K2,K2 Horizon,True,(?i)\bK2[\sv-]*Horizon(?:v\d)*\b
+K2,K2,False,(?i)\bK2(?:v\d)*\b
+Spark,Spark X 2.5,True,(?i)\bSpark\s?X?\s?2[\s.-]*5(?:v\d)*\b
+Spark,Spark,False,(?i)\bSpark(?:v\d)*\b
+KAT,KAT Coder,True,(?i)\bKAT[\sv-]*Coder(?:v\d)*\b
+KAT,KAT,False,(?i)\bKAT(?:v\d)*\b
+Laya,Laya,True,(?i)\bLaya(?:v\d)*\b
+Swift,Swift Flash Next,True,(?i)\bSwift[\sv-]*Flash[\sv-]*Next(?:v\d)*\b
+Swift,Swift Bonsai 2,True,(?i)\bSwift[\sv-]*Bonsai[\sv-]*2(?:v\d)*\b
+Swift,Swift 1.5,True,(?i)\bSwift[\sv-]*1[\s.-]*5(?:v\d)*\b
+Swift,Swift 27B,True,(?i)\bSwift[\sv-]*27B(?:v\d)*\b
+Swift,Swift,False,(?i)\bSwift(?:v\d)*\b
+Xing,Xing 4,True,(?i)\bXing[\sv-]*4(?:v\d)*\b
+Xing,Xing,False,(?i)\bXing(?:v\d)*\b
+Hemmingway,Hemmingway,True,(?i)\bHemmingway(?:v\d)*\b
+ZDTaichu,ZDTaichu 5,True,(?i)\bZDTaichu[\sv-]*5(?:v\d)*\b
+ZDTaichu,ZDTaichu,False,(?i)\bZDTaichu(?:v\d)*\b
